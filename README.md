@@ -207,3 +207,7 @@ Related
     "[Eternal compatibility in theory](The_Monad.Reader/Issue2/EternalCompatibilityInTheory "wikilink"),"
     [The Monad.Reader](The Monad.Reader "wikilink"),
     [Issue 2](The Monad.Reader/Issue2 "wikilink")
+-   [Semantics Versioning](http://semver.org/), 
+    a widely adopted cross-language standard that gives nearly identical 
+    meanings to _major_ and _minor_ versions, though using only one 
+    digit for the major version.
