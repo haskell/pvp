@@ -26,7 +26,11 @@ formalize the policy.
 Version numbers
 ---------------
 
-A package version number should have the form *A.B.C*, and may
+The key words "MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”,
+“SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be
+interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
+
+A package version number **SHOULD** have the form *A.B.C*, and **MAY**
 optionally have any number of additional components, for example 2.1.0.4
 (in this case, *A*=2, *B*=1, *C=0*). This policy defines the meaning of
 the first three components *A-C*, the other components can be used in
@@ -39,10 +43,6 @@ ordering of the components. For example, 2.0.1 \> 1.3.2, and 2.0.1.0 \> 2.0.1.
 *A.B* is known as the *major* version number, and *C* the *minor*
 version number. When a package is updated, the following rules govern
 how the version number must change relative to the previous version:
-
-The key words "MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”,
-“SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be
-interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
 
 1. *Breaking change*. If any entity was removed, or the types of any entities
 or the definitions of datatypes or classes were changed, or orphan instances
@@ -152,7 +152,7 @@ to handle this situation.
 
 ### Version tags
 
-The components of the version number must be numbers! Historically Cabal
+The components of the version number **MUST** be numbers! Historically Cabal
 supported version numbers with string tags at the end, e.g. `1.0-beta`
 This proved not to work well because the ordering for tags was not well
 defined. Version tags are [no longer
@@ -176,7 +176,7 @@ The (incomplete!) decision tree summarises the PVP rules in a concise form
 Dependencies in Cabal
 ---------------------
 
-When publishing a Cabal package, you should ensure that your
+When publishing a Cabal package, you **SHALL** ensure that your
 dependencies in the `build-depends` field are accurate. This means
 specifying not only lower bounds, but also upper bounds on every
 dependency.
