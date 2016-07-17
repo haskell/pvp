@@ -33,21 +33,20 @@ the first three components *A-C*, the other components can be used in
 any way the package maintainer sees fit.
 
 Version number ordering is already defined by Cabal as the lexicographic
-ordering of the components. For example, 2.1 \> 1.3, and 2.1.1 \> 2.1.
-(The `Data.Version.Version` type and its `Ord` instance embody this
-ordering).
+ordering of the components. For example, 2.0.1 \> 1.3.2, and 2.0.1.0 \> 2.0.1.
+(The `Data.Version.Version` type and its `Ord` instance embody this ordering).
 
 *A.B* is known as the *major* version number, and *C* the *minor*
 version number. When a package is updated, the following rules govern
 how the version number must change relative to the previous version:
 
 1.  If any entity was removed, or the types of any entities or the
-    definitions of datatypes or classes were changed, or orphan
-    instances were added or any instances were removed, then the new
-    *A.B* must be greater than the previous *A.B*. Note that modifying
-    imports or depending on a newer version of another package may cause
-    extra orphan instances to be exported and thus force a major version
-    change.
+    definitions of datatypes or classes were changed, or [orphan
+    instances](https://wiki.haskell.org/Orphan_instance) were added or any
+    instances were removed, then the new *A.B* must be greater than the previous
+    *A.B*. Note that modifying imports or depending on a newer version of another
+    package may cause extra orphan instances to be exported and thus force a major
+    version change.
 2.  Otherwise, if only new bindings, types, classes, non-orphan
     instances or modules (but see below) were added to the interface,
     then *A.B* may remain the same but the new *C* must be greater than
@@ -65,7 +64,7 @@ a particular *A.B.C* and be sure of getting that API only. For example,
 Often a package maintainer wants to add to an API without breaking
 backwards compatibility, and in that case they can follow the rules of
 point 2, and increase only *C*. A client can specify that they are
-[insensitive to additions to the API](Import modules properly "wikilink")
+[insensitive to additions to the API](https://wiki.haskell.org/Import_modules_properly)
 by allowing a range of *C* values, e.g. `build-depends: base >= 2.1.1 && < 2.2`.
 
 If a package defines an orphan instance, it must depend on the minor
@@ -75,9 +74,10 @@ be backwards compatible. For example,
 
 ### Deprecation
 
-Deprecated entities (via a `DEPRECATED` pragma) should probably be
-counted as removed for the purposes of upgrading the API, because
-packages that use `-Werror` will be broken by the deprecation.
+Deprecated entities (via [a `DEPRECATED`
+pragma](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/glasgow_exts.html#warning-and-deprecated-pragmas))
+should probably be counted as removed for the purposes of upgrading the API,
+because packages that use `-Werror` will be broken by the deprecation.
 
 ### Adding new modules
 
@@ -186,7 +186,7 @@ risky: when a package exports more things than before, there is a chance
 that your code will fail to compile due to new name-clash errors. The
 risk from new name clashes may be small, but you are on the safe side if
 you
-[import identifiers explicitly or using qualification](Import modules properly "wikilink").
+[import identifiers explicitly or using qualification](https://wiki.haskell.org/Import_modules_properly).
 
 Version syntax
 --------------
@@ -205,13 +205,14 @@ Tools
 -   [precis](http://hackage.haskell.org/package/precis) - a simple tool
     for a first approximation of package API differences, see the
     [announcement](http://www.haskell.org/pipermail/haskell-cafe/2010-April/077023.html)
--   is a program that checks for consistency between package
+-   [check-pvp](http://hackage.haskell.org/package/check-pvp) is a program that checks for consistency between package
     dependencies and import style.
 
 Related
 -------
 
--   [Sven Moritz Hallberg](Sven Moritz Hallberg "wikilink"),
-    "[Eternal compatibility in theory](The_Monad.Reader/Issue2/EternalCompatibilityInTheory "wikilink"),"
-    [The Monad.Reader](The Monad.Reader "wikilink"),
-    [Issue 2](The Monad.Reader/Issue2 "wikilink")
+-   Sven Moritz Hallberg,
+    "[Eternal compatibility in theory](https://wiki.haskell.org/The_Monad.Reader/Issue2/EternalCompatibilityInTheory),"
+    [The Monad.Reader](https://wiki.haskell.org/The_Monad.Reader),
+    [Issue 2](https://wiki.haskell.org/The_Monad.Reader/Issue2)
+-   [Semantic Versioning](http://semver.org/) is similar, but allows for version tags and defines how tags affect the ordering.
