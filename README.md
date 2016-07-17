@@ -158,6 +158,14 @@ the deprecated tags syntax without realising it, for example a version
 number with a date like `1.0.2014-01-27` would be interpreted as the
 version `1.0.2014` with tags `01` and `27`.
 
+
+Decision Tree
+-------------
+
+The (incomplete!) decision tree summarises the PVP rules in a concise form
+
+![](pvp-decision-tree.svg)
+
 Dependencies in Cabal
 ---------------------
 
