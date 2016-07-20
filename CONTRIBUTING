@@ -1,0 +1,10 @@
+For simple typos and obvious clarifications go ahead and submit a PR.
+
+For more substantial changes, here's some ideas how to articulate your RFC/proposal:
+
+- try to review previous proposals in case similiar ideas were already proposed
+- state clearly what problem your proposal is trying to address
+- if you file an issue rather than a concrete PR, state precisely what you intend to change
+- describe how your change helps addressing the problem
+- describe any disadvantages/trade-offs of the proposal you are aware of
+- describe implications for backward compatibility or changes to Cabal needed
