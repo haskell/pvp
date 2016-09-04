@@ -1,5 +1,9 @@
-Package versioning policy
-=========================
+---
+title: Haskell PVP Specification
+---
+
+Haskell Package Versioning Policy
+=================================
 
 Rationale
 ---------
