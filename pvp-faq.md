@@ -207,7 +207,7 @@ There are course also 3rd party distribution/curation systems, such as
 Stackage or Linux distributions, which create distributions from
 subsets of Hackage's repository. But the existence of such external
 systems does not relieve package authors from the responsibility to
-follw the PVP when publishing on Hackage.
+follow the PVP when publishing on Hackage.
 
 Hackage is designed to be a self-contained package repository for
 consumption by `cabal` which relies on constraint-solving for
