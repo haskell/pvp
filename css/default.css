@@ -211,3 +211,16 @@ footer {
 .main-header-subtext {
   margin-bottom: 20px;
 }
+
+/* Anchors after headers */
+
+a.anchor {
+    margin-left: 10px;
+    display: none;
+    text-decoration: none;
+}
+
+/* Display anchors if we are hovering above the parent header. */
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+    display: inline;
+}
