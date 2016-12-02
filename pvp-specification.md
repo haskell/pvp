@@ -147,7 +147,7 @@ Now consider this scenario:
 3.  Package C might or might not compile, depending on which patch-level
     version of package B is used.
 
-The PVP could required that package B must bump its major version number
+The PVP could require that package B must bump its major version number
 as it now (re-)exports one fewer instances. This will however require
 more frequent version bumps in the whole ecosystem. As a pragmatic
 solution, for now the PVP doesn't required a major version bump in this
