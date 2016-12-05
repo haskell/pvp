@@ -34,8 +34,10 @@ main = hakyll $ do
 --------------------------------------------------------------------------------
 -- | Our own pandoc compiler.
 pvpPandocCompiler :: Compiler (Item String)
-pvpPandocCompiler =
-    pandocCompilerWithTransform Pandoc.def Pandoc.def addAnchors
+pvpPandocCompiler = pandocCompilerWithTransform
+    defaultHakyllReaderOptions
+    defaultHakyllWriterOptions
+    addAnchors
 
 
 --------------------------------------------------------------------------------
