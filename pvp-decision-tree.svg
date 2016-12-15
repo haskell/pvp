@@ -15,7 +15,7 @@
    id="svg4658"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="PVP.svg">
+   sodipodi:docname="pvp-decision-tree.svg">
   <title
      id="title4386">The Haskell Package Versioning Policy</title>
   <defs
@@ -227,24 +227,27 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="132.84289"
-     inkscape:cy="357.16117"
+     inkscape:zoom="1.979899"
+     inkscape:cx="493.00512"
+     inkscape:cy="147.40868"
      inkscape:document-units="px"
      inkscape:current-layer="layer2"
      showgrid="true"
      inkscape:snap-global="true"
      inkscape:snap-bbox="true"
      inkscape:bbox-nodes="true"
-     inkscape:window-width="2556"
-     inkscape:window-height="1411"
-     inkscape:window-x="0"
-     inkscape:window-y="25"
+     inkscape:window-width="1916"
+     inkscape:window-height="1076"
+     inkscape:window-x="2560"
+     inkscape:window-y="0"
      inkscape:window-maximized="0"
      fit-margin-top="10"
      fit-margin-left="10"
      fit-margin-right="10"
-     fit-margin-bottom="10">
+     fit-margin-bottom="10"
+     inkscape:snap-intersection-paths="true"
+     inkscape:object-nodes="false"
+     inkscape:snap-smooth-nodes="false">
     <inkscape:grid
        type="xygrid"
        id="grid5626"
@@ -777,22 +780,22 @@
          id="tspan4621"
          sodipodi:role="line"
          x="559.88544"
-         y="471.93057">In this case users of</tspan><tspan
+         y="471.93057">In this case users of your</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.00000095px;line-height:139.99999762%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start"
          sodipodi:role="line"
          x="559.88544"
          y="488.73056"
-         id="tspan4667">existing interfaces</tspan><tspan
+         id="tspan4667">library's existing interfaces</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.00000095px;line-height:139.99999762%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start"
          sodipodi:role="line"
          x="559.88544"
          y="505.53058"
-         id="tspan4671">may break with the new</tspan><tspan
+         id="tspan4671">may break when build </tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.00000095px;line-height:139.99999762%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start"
          sodipodi:role="line"
          x="559.88544"
          y="522.33057"
-         id="tspan9582">release.</tspan><tspan
+         id="tspan9582">against your new release.</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.00000095px;line-height:139.99999762%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start"
          sodipodi:role="line"
          x="559.88544"
@@ -871,7 +874,7 @@
          sodipodi:role="line"
          id="tspan11832"
          x="399.20001"
-         y="367.36221">If your last release was</tspan><tspan
+         y="367.36221">If your last release's version was</tspan><tspan
          sodipodi:role="line"
          x="399.20001"
          y="382.36221"
@@ -965,11 +968,11 @@
          y="553.73535"
          x="399.20001"
          id="tspan11894"
-         sodipodi:role="line">You new release</tspan><tspan
+         sodipodi:role="line">Your new release</tspan><tspan
          y="568.73535"
          x="399.20001"
          sodipodi:role="line"
-         id="tspan11898">should be,</tspan><tspan
+         id="tspan11898">version should be,</tspan><tspan
          id="tspan11896"
          y="583.73535"
          x="399.20001"
@@ -1011,5 +1014,11 @@
            y="424.13681"
            id="tspan4442">necessary</tspan></text>
     </g>
+    <path
+       sodipodi:nodetypes="ccc"
+       inkscape:connector-curvature="0"
+       id="path4387"
+       d="m 294.2,218.16218 70,0 0,159.85026"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.60000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
 </svg>
