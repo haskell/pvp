@@ -226,4 +226,5 @@ Related
     "[Eternal compatibility in theory](https://wiki.haskell.org/The_Monad.Reader/Issue2/EternalCompatibilityInTheory),"
     [The Monad.Reader](https://wiki.haskell.org/The_Monad.Reader),
     [Issue 2](https://wiki.haskell.org/The_Monad.Reader/Issue2)
--   [Semantic Versioning](http://semver.org/) is similar, but allows for version tags and defines how tags affect the ordering.
+-   [Semantic Versioning (SemVer)](http://semver.org/) specifies a versioning scheme sharing similiarities with the PVP;
+    but it also differs significantly in some aspects. For more details, consult the [**PVP↔SemVer FAQ section**](./faq/#semver).
