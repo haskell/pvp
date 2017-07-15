@@ -137,7 +137,7 @@ e.g. cyclic. datastructures).
 Note how confusingly similiar the two variants sound; it's just a
 subtle difference in word order. Also note the use of the term
 "compatible" which is intended to emphasize *semantic API
-compatibility*, rather than merely succesfull compilation
+compatibility*, rather than merely successful compilation
 (I.e. there's no "it compiles, it works" property which holds in
 general for Haskell... yet).
 
