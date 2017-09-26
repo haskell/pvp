@@ -86,10 +86,9 @@ it **MUST** depend on the minor version of the packages that define the data
 type and the type class to be backwards compatible. For example,
 `build-depends: mypkg >= 2.1.1 && < 2.1.2`.
 
-1. *Deprecation*. Deprecated entities (via a `DEPRECATED` pragma) *SHOULD* be
-counted as removed for the purposes of upgrading the API, because packages that
-use `-Werror` will be broken by the deprecation. In other words the new *A.B*
-**SHOULD** be greater than the previous *A.B*.
+1. *Deprecation*. Deprecated entities (via a `DEPRECATED` pragma) **SHOULD** be
+counted as a non-breaking change. In other words, the new *A.B* **MAY** remain
+the same but the new *C* **SHOULD** be greater than the old *C*.
 
 1. *Adding new modules*. Adding new modules might cause an unavoidable name
 collision in dependent code. However, this is usually pretty unlikely,
@@ -214,8 +213,9 @@ included, rather than just including 1.1.4.0.
 Semantic changes relative to [PVP-1.0](/v1.0)
 ---------------------------------------------
 
-*TBD*
-
+- Deprecation (§7) is not considered a breaking change anymore and
+  merely requires a minor version increment with PVP-1.1
+  ([PVP#12](https://github.com/haskell/pvp/issues/12))
 
 Appendix
 --------
