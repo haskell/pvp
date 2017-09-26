@@ -83,10 +83,9 @@ it **MUST** depend on the minor version of the packages that define the data
 type and the type class to be backwards compatible. For example,
 `build-depends: mypkg >= 2.1.1 && < 2.1.2`.
 
-1. *Deprecation*. Deprecated entities (via a `DEPRECATED` pragma) *SHOULD* be
-counted as removed for the purposes of upgrading the API, because packages that
-use `-Werror` will be broken by the deprecation. In other words the new *A.B*
-**SHOULD** be greater than the previous *A.B*.
+1. *Deprecation*. Deprecated entities (via a `DEPRECATED` pragma) **SHOULD** be
+counted as a non-breaking change. In other words, the new *A.B* **MAY** remain
+the same but the new *C* **SHOULD** be greater than the old *C*.
 
 1. *Adding new modules*. Adding new modules might cause an unavoidable name
 collision in dependent code. However, this is usually pretty unlikely,
