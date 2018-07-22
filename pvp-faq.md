@@ -20,7 +20,7 @@ Historically, the [SemVer specification](http://semver.org) saw the light of day
 2009, whereas the first incarnation of the PVP was already conceived 
 [3 years earlier in late 2006](https://mail.haskell.org/pipermail/haskell/2006-November/018762.html).
 
-The basic goals of SemVer and PVP are very similiar, namely, to
+The basic goals of SemVer and PVP are very similar, namely, to
 **provide a formal specification for version numbers to make it
 possible to specify version bounds for dependency management**
 (c.f. [Why Use Semantic Versioning?](http://semver.org/#why-use-semantic-versioning)).
@@ -134,7 +134,7 @@ e.g. cyclic. datastructures).
 
 ### What is the intended meaning of upper bounds; is it "*not known* to be compatible" or rather "*known not* to be compatible"?
 
-Note how confusingly similiar the two variants sound; it's just a
+Note how confusingly similar the two variants sound; it's just a
 subtle difference in word order. Also note the use of the term
 "compatible" which is intended to emphasize *semantic API
 compatibility*, rather than merely successful compilation
