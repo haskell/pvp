@@ -130,7 +130,7 @@ changed from reducing to WHNF to generically deriving a NF-evaluating
 traversal. Code which assumed a default of `rnf x = seq x ()` could
 break if the new `rnf` implementation resulted in suddenly traversing
 a data structure which wasn't meant to be traversed beyond WHNF (like
-e.g. cyclic. datastructures).
+e.g. cyclic data structures).
 
 ### What is the intended meaning of upper bounds; is it "*not known* to be compatible" or rather "*known not* to be compatible"?
 
@@ -138,7 +138,7 @@ Note how confusingly similar the two variants sound; it's just a
 subtle difference in word order. Also note the use of the term
 "compatible" which is intended to emphasize *semantic API
 compatibility*, rather than merely successful compilation
-(I.e. there's no "it compiles, it works" property which holds in
+(i.e. there's no "it compiles, it works" property which holds in
 general for Haskell... yet).
 
 The central idea of the PVP (and SemVer) is to serve as a contract to
@@ -203,7 +203,7 @@ frequently for potential incompatibilities.
 Yes, packages uploaded to Hackage (which is a pre-requisite for being
 included in Stackage) are expected to honor the PVP.
 
-There are course also 3rd party distribution/curation systems, such as
+Of course there are also 3rd party distribution/curation systems, such as
 Stackage or Linux distributions, which create distributions from
 subsets of Hackage's repository. But the existence of such external
 systems does not relieve package authors from the responsibility to
@@ -237,7 +237,7 @@ package version, and any API consumer depending on that package.
 
 It's the responsibility of the provider to guarantee that the exposed
 API is a function of the declared version, and in particular does not
-depend on the versions of its transitive dependencies, as this defy
+depend on the versions of its transitive dependencies, as this would defy
 the purpose of the PVP.
 
 To avoid such issues, it's best to avoid re-exporting API elements
@@ -256,17 +256,15 @@ version to uniquely identify the exposed API in order to fulfill its
 purpose as a semantic version. So ideally, the exposed API shall be a
 function of *only* its package version.
 
-However, conditional APIs, cause the exposed API to weaken the
-relationship to its version. So packages can't rely on the package
-providing an API to be accurately described by only its version, but
-rather need to track all other variables which may have an effect on
-the relied upon API.
+Conditionality weakens the relationship between an API and its version.
+Moreover, it forces consumers of such packages to handle the resultant
+ambiguity.
 
 This obviously increases the risk for errors, due to the combinatorial
 increase of configurations one needs to consider, and should therefore
 be avoided.
 
-However, it is reasonable to deviate from this recommendation, when
+However, it is reasonable to deviate from this recommendation when
 the API conditionality is practically impossible to observe by API
 consumers. An example is when API features are conditional on compiler
 features which consumers are only able to use of if they depend on
