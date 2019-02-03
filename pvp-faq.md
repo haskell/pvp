@@ -2,7 +2,7 @@
 title: Haskell PVP FAQ
 ---
 
-# Haskell Package Versioning Policy FAQ ^^[DRAFT]^^
+# Haskell Package Versioning Policy FAQ
 
 This FAQ is intended answer questions related to aspects commonly
 being brought up in discussions involving the Haskell
