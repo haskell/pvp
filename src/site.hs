@@ -3,6 +3,7 @@
 import           Hakyll
 import qualified Text.Pandoc      as Pandoc
 import qualified Text.Pandoc.Walk as Pandoc
+import Control.Monad
 
 --------------------------------------------------------------------------------
 main :: IO ()
@@ -14,15 +15,20 @@ main = hakyll $ do
     match "templates/*" $ do
         compile templateBodyCompiler
 
-    match "*.svg" $ do
-        route   idRoute
-        compile copyFileCompiler
+    create ["index.html"] $ do
+      route idRoute
+      compile $ makeItem $ Redirect "/v1.0"
 
-    match "pvp-specification.md" $ do
-        route (constRoute "index.html")
-        compile $ pvpPandocCompiler
-            >>= loadAndApplyTemplate "templates/default.html" defaultContext
-            >>= relativizeUrls
+    forM_ ["v1.0", "v1.1"] $ \specver -> do
+      match (fromGlob (specver ++ "/pvp-decision-tree.svg")) $ do
+          route   idRoute
+          compile copyFileCompiler
+
+      match (fromGlob (specver ++ "/pvp-specification.md")) $ do
+          route (constRoute (specver ++ "/index.html"))
+          compile $ pvpPandocCompiler
+              >>= loadAndApplyTemplate "templates/default.html" defaultContext
+--            >>= relativizeUrls
 
     match "pvp-faq.md" $ do
         route (constRoute "faq/index.html")

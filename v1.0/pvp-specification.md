@@ -1,9 +1,9 @@
 ---
-title: Haskell PVP Specification
+title: Haskell PVP 1.0 Specification
 ---
 
-Haskell Package Versioning Policy
-=================================
+Haskell Package Versioning Policy 1.0
+=====================================
 
 Rationale
 ---------
@@ -175,7 +175,7 @@ Decision Tree
 
 The (incomplete!) decision tree summarises the PVP rules in a concise form
 
-![](pvp-decision-tree.svg)
+![](/v1.0/pvp-decision-tree.svg)
 
 Dependencies in Cabal
 ---------------------
