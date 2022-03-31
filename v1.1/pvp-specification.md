@@ -41,7 +41,8 @@ A package version number **SHOULD** have the form *A.B.C*, and **MAY**
 optionally have any number of additional components, for example 2.1.0.4
 (in this case, *A*=2, *B*=1, *C=0*). This policy defines the meaning of
 the first three components *A-C*, the other components can be used in
-any way the package maintainer sees fit.
+any way the package maintainer sees fit. Components are non-negative
+integers, and MUST NOT contain leading zeroes.
 
 Version number ordering is already defined by Cabal as the lexicographic
 ordering of the components. For example, 2.0.1 \> 1.3.2, and 2.0.1.0 \> 2.0.1.
