@@ -48,7 +48,10 @@ ordering of the components. For example, 2.0.1 \> 1.3.2, and 2.0.1.0 \> 2.0.1.
 version number. When a package is updated, the following rules govern
 how the version number must change relative to the previous version:
 
-1. *Breaking change*. If any entity was removed, or the types of any entities
+1. *Internal modules*. If a change only touches entities defined in modules
+whose names include the string `.Internal` then *A.B* **MAY** remain unchanged.
+
+3. *Breaking change*. If any entity was removed, or the types of any entities
 or the definitions of datatypes or classes were changed, or orphan instances
 were added or any instances were removed, then the new *A.B* **MUST** be
 greater than the previous *A.B*. Note that modifying imports or depending on a
