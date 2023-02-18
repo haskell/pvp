@@ -221,16 +221,6 @@ Semantic changes relative to [PVP-1.0](/v1.0)
 Appendix
 --------
 
-### Tools
-
--   script to check for API changes in gtk2hs:
-    <http://code.haskell.org/gtk2hs/tools/apidiff/>
--   [precis](http://hackage.haskell.org/package/precis) - a simple tool
-    for a first approximation of package API differences, see the
-    [announcement](http://www.haskell.org/pipermail/haskell-cafe/2010-April/077023.html)
--   [check-pvp](http://hackage.haskell.org/package/check-pvp) is a program that checks for consistency between package
-    dependencies and import style.
-
 ### Related
 
 -   Sven Moritz Hallberg,
