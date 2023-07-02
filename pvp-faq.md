@@ -238,10 +238,11 @@ way that the package can obey the PVP for all consumers, since the
 libraries share a version.
 
 For example, if package P exposes library A and B, and A changes to
-remove an exported entry, then the PVP says that the major version 
-of A must be increased. Since there is only one version for the 
-package, that means that the major version of the package must increase,
-even though B has not changed.
+remove an exported entry, then the PVP says that if A was a standalone
+package, then its major version of would have to increase. Since 
+there is only one package and only one version for both A and B, that 
+means that the major version of P itself must increase, even though 
+B has not changed.
 
 That is, the rules are the same as if A and B were both exposed via 
 a single library.
