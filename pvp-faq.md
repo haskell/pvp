@@ -230,6 +230,22 @@ executables such as `alex` or `happy` which generate code, and
 especially when such packages are meant to be tracked as dependencies
 in `build-tools`.
 
+### My Package provides multiple APIs; how does the PVP apply to multi-library packages?
+
+Packages that expose multiple public libraries must consider their API
+to be the union of the APIs of the exposed library. This is the only
+way that the package can obey the PVP for all consumers, since the
+libraries share a version.
+
+For example, if package P exposes library A and B, and A changes to
+remove an exported entry, then the PVP says that the major version 
+of A must be increased. Since there is only one version for the 
+package, that means that the major version of the package must increase,
+even though B has not changed.
+
+That is, the rules are the same as if A and B were both exposed via 
+a single library.
+
 ### What implications does the PVP have when re-exporting API elements?
 
 The PVP is a contract between the API provider which declares a
