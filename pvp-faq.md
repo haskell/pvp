@@ -291,3 +291,26 @@ conditionally, as you'd need to have access to the `Generic` class and
 be able to define instances for it in the first place, before being
 able to make use of (and thus observe) the default implementation of
 `rnf`.
+
+## Internal modules
+
+There are various common practices of exempting some modules from PVP.
+E.g.:
+
+* Mentioning in the documentation that the module is not under PVP
+* Naming module with prefix/infix/suffix component `Internal`
+* Combination of the two above
+
+These practices and any others attempts to exempt exposed modules from PVP
+are **not permitted**.
+
+The `Internal` modules are useful to export internals of a library, like
+in `Data.Text.Internal` in [text](https://hackage.haskell.org/package/text),
+however these are expected to follow versioning policy as any other modules
+(and `Data.Text.Internal` does).
+
+If author desires to keep library version churn to a minimum, yet be able
+to change internals freely, then they are adviced to create a separate
+package for the internal API. That approach is outlined in
+[Nikita Volvov's blog post "Internal convention is a mistake"](http://nikita-volkov.github.io/internal-convention-is-a-mistake/).
+
