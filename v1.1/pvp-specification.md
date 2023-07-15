@@ -176,7 +176,9 @@ version `1.0.2014` with tags `01` and `27`.
 Decision tree
 -------------
 
-The (incomplete!) decision tree summarises the PVP rules in a concise form
+The (incomplete!) decision tree summarises the PVP rules in a concise form.
+It is not a precise representation of the spec and may contain informal
+conventions and recommendations.
 
 ![](/v1.1/pvp-decision-tree.svg)
 
