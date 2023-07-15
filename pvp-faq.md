@@ -236,7 +236,7 @@ Since Cabal 3.0 and GHC 8.8, Cabal packages can have multiple public
 libraries, as well as the default library with the same name as the package.
 
 Packages that expose multiple public libraries must consider their API
-to be the union of the APIs of the exposed library. This is the only
+to be the union of the APIs of the exposed libraries. This is the only
 way that the package can obey the PVP for all consumers, since the
 libraries share a version.
 
