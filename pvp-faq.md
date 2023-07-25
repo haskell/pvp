@@ -310,7 +310,7 @@ however these are expected to follow versioning policy as any other modules
 (and `Data.Text.Internal` does).
 
 If author desires to keep library version churn to a minimum, yet be able
-to change internals freely, then they are adviced to create a separate
+to change internals freely, then they are advised to create a separate
 package for the internal API. That approach is outlined in
 [Nikita Volvov's blog post "Internal convention is a mistake"](http://nikita-volkov.github.io/internal-convention-is-a-mistake/).
 
