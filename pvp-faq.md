@@ -230,6 +230,26 @@ executables such as `alex` or `happy` which generate code, and
 especially when such packages are meant to be tracked as dependencies
 in `build-tools`.
 
+### My Package provides multiple APIs; how does the PVP apply to multi-library packages?
+
+Since Cabal 3.0 and GHC 8.8, Cabal packages can have multiple public
+libraries, as well as the default library with the same name as the package.
+
+Packages that expose multiple public libraries must consider their API
+to be the union of the APIs of the exposed libraries. This is the only
+way that the package can obey the PVP for all consumers, since the
+libraries share a version.
+
+For example, if package P exposes library A and B, and A changes to
+remove an exported entry, then the PVP says that if A was a standalone
+package, then its major version of would have to increase. Since 
+there is only one package and only one version for both A and B, that 
+means that the major version of P itself must increase, even though 
+B has not changed.
+
+That is, the rules are the same as if A and B were both exposed via 
+a single library.
+
 ### What implications does the PVP have when re-exporting API elements?
 
 The PVP is a contract between the API provider which declares a
