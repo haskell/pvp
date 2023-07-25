@@ -301,8 +301,8 @@ E.g.:
 * Naming module with prefix/infix/suffix component `Internal`
 * Combination of the two above
 
-These practices and any others attempts to exempt exposed modules from PVP
-are **not permitted**.
+PVP does not endorse or recognise such practices.
+All exposed modules are subject to the uniform versioning policy.
 
 The `Internal` modules are useful to export internals of a library, like
 in `Data.Text.Internal` in [text](https://hackage.haskell.org/package/text),
