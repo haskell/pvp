@@ -92,109 +92,21 @@ bound in the SemVer representation.
 
 ## Upper bounds
 
-### Defining upper bounds requires to know the future, as you can't know whether a not yet released future version will contain a breaking change.
-
-Of course, the PVP doesn't provide you with a way to know *for sure*
-when compatibility will break; however, the PVP tells you a *least
-upper bound up to which your package is guaranteed* (under certain
-conditions) to remain compatible.
-
-Without the PVP contract, you'd be left with no choice but to
-constraint your package to versions of dependencies for which you have
-empirical "known to work" evidence for (or complete control over).
-
-### Upper bounds can be inferred by running build bots to determine when breaking changes have been introduced in dependencies.
-
-This assumes that compile-success is equivalent to semantic
-correctness. While it's true that a compile failure implies that a
-breakage has occurred, the inverse is not true in general. 
-
-There's been already a couple of incidents (see next Q) when popular
-packages changed their semantics without changing their type-signature
-and thereby caused problems in packages which didn't have proper
-PVP-mandated upper bounds in place.
-
-Therefore leaving off upper bounds under the assumption that breakages
-will show in form of build-failures is a dangerous erroneous belief,
-as it can result in hard to detect/debug silent failures.
-
-### What are some real-world examples of packages causing breakage due to semantic changes?
-
-In the major version `aeson-0.10`, the serialization of `Maybe`-values
-was deliberately changed in an incompatible way which caused packages
-not declaring an upper bound to be caught off guard. In `aeson-0.11`
-this was changed yet again.
-
-In `deepseq-1.4`, the default method implementation of `rnf` was
-changed from reducing to WHNF to generically deriving a NF-evaluating
-traversal. Code which assumed a default of `rnf x = seq x ()` could
-break if the new `rnf` implementation resulted in suddenly traversing
-a data structure which wasn't meant to be traversed beyond WHNF (like
-e.g. cyclic data structures).
-
 ### What is the intended meaning of upper bounds; is it "*not known* to be compatible" or rather "*known not* to be compatible"?
 
-Note how confusingly similar the two variants sound; it's just a
-subtle difference in word order. Also note the use of the term
-"compatible" which is intended to emphasize *semantic API
-compatibility*, rather than merely successful compilation
-(i.e. there's no "it compiles, it works" property which holds in
-general for Haskell... yet).
+In the case of *not known to be compabitle*, newer Cabal versions (since 2.0)
+support the caret operator (`^>=`), which is not part of the PVP spec yet.
 
-The central idea of the PVP (and SemVer) is to serve as a contract to
-communicate API compatibility guarantees (NB: *not* to predict
-breakage!). To this end, the version number semantics are encoded in
-sophisticated rules for when exactly to increment the various
-components.
+It is described in the [cabal documentation](https://cabal.readthedocs.io/en/stable/cabal-package.html#pkg-field-build-depends).
 
-As such, it makes little sense to interpret the PVP mandated upper
-bounds as the stronger "known not to be compatible" (i.e. having
-evidence of incompatibility), as then one would almost never be able
-to declare upper bounds in the first place. This would greatly reduce
-the value of the PVP as well as make it difficult to justify the effort
-of following the complex formal rules for assigning version numbers in
-the first place.
+It allows tools to relax upper bounds more easily, where defensive bounds were put in place.
 
-Consequently, the PVP mandated upper bounds are intended to denote
-"not known (yet) to be compatible" bounds, i.e. the least upper bounds
-up to which API compatibility is guaranteed by the PVP contract. This
-may not be an ultimate guarantee, but without such upper bounds,
-there's no guarantee *at all* the next released version won't cause
-breakage.
+The spec so far does not make a clear decision on the meaning of upper bounds. Maintainers
+may choose to not use the caret operator if they are still using an older Cabal version.
+Likewise, maintainers may choose to not use any upper bounds if they have confidence in
+their CI automation to detect breakages early.
 
-Or put differently, the goal of PVP mandated upper bounds is to be
-conservative, but in the most liberal way possible.
-
-### Packages like `base` almost never break my code on major version increments; does this make predicted upper bounds less useful?
-
-`base` is an example for a large package with a huge exposed API,
-which is tracked as a whole by a single version number. Often, API
-consumers tend to use only a small fraction of the exposed API
-surface, and in the case of `base` this most often a very stable
-subset. However, `base` being so large typically changes in backward
-incompatible ways with each major GHC release, even though most
-programs are not affected.
-
-So the problem here is that big monolithic packages are rather
-disadvantageous in the context of semantic versioning, whose goal is
-to formalize version numbers to the point of making predicting upper
-bounds feasible at all.
-
-However, this doesn't detract from the usefulness of upper bounds;
-this just means that more cost is shifted from the single API provider
-to its many API consumers for such big monolithic packages.
-
-Ideally, such big packages can be deconstructed into smaller modular
-packages which each focus on separate concerns. This way version
-numbers become more expressive as they cover a smaller API surface,
-and the risk for API consumers of running into a major version update
-because of changes in totally unrelated parts is reduced accordingly.
-
-But this comes at a cost: Maintaining a carefully crafted set of
-focused packages is more costly to the maintainer compared to
-maintaining a single monolithic package, which comes at the expense of
-API consumers as they need to review major version updates more
-frequently for potential incompatibilities.
+However, in light of the caret operator, regular upper bounds shall mean *known not to be compabitle*.
 
 ## Hackage & Stackage
 
