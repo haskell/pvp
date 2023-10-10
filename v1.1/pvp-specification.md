@@ -66,7 +66,7 @@ old *C*. Note that modifying imports or depending on a newer version of another
 package may cause extra non-orphan instances to be exported and thus force a
 minor version change.
 
-1. *Other changes*. Otherwise, e.g. if change consist only of corrected
+1. *Last-component changes*. Otherwise, e.g. if change consist only of corrected
 documentation, non-visible change to allow different dependency range etc.
 *A.B.C* **MAY** remain the same (other version components may change).
 
@@ -99,6 +99,10 @@ new *C* **MUST** be greater than the old *C*. If, however, your added module
 name is taken from another package (e.g. when `network-bytestring` was merged
 into `network`) or is quite general (`Data.Set` or something similar) then the
 version increase **SHOULD** be major.
+
+1. *Non-enumerated changes*. As the Haskell language evolves, new features may be introduced (e.g. rewrite rules)
+which are not explicitly covered in the above rules. In such cases, in keeping with the spirit of the PVP, any changes not
+enumerated above which would cause a package depending on the versioned package to fail to compile **MUST** be considered breaking.
 
 Special situations
 ------------------
