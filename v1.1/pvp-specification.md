@@ -66,8 +66,8 @@ old *C*. Note that modifying imports or depending on a newer version of another
 package may cause extra non-orphan instances to be exported and thus force a
 minor version change.
 
-1. *Other changes*. Otherwise, e.g. if change consist only of corrected
-documentation, non-visible change to allow different dependency range etc.
+1. *Other changes*. Otherwise, e.g. if the change consists only of corrected
+documentation, non-visible change to allow a different dependency range etc.
 *A.B.C* **MAY** remain the same (other version components may change).
 
 1. *Client specification*. Hence *A.B.C* uniquely identifies the API. A client
