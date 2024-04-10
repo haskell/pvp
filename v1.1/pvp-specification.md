@@ -187,13 +187,10 @@ Dependencies in Cabal
 
 When publishing a Cabal package, you **SHALL** ensure that your
 dependencies in the `build-depends` field are accurate. This means
-specifying not only lower bounds, but also upper bounds on every
-dependency.
-
-At some point in the future, Hackage may refuse to accept packages that
-do not follow this convention. The aim is that before this happens, we
-will put in place tool support that makes it easier to follow the
-convention and less painful when dependencies are updated.
+at least specifying lower bounds. You **SHALL* at least specify upper
+bounds if there are known incompatibilities.
+It is **NOT REQUIRED** to set an upper bound if all currently known
+versions of a dependency are compatible, although it is **RECOMMENDED**.
 
 To minimize breakage when new package versions are released, you can use
 dependencies that are insensitive to minor version changes (e.g.
