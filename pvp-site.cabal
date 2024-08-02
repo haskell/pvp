@@ -7,7 +7,7 @@ tested-with:        GHC == 9.4.8 || == 9.6.6 || == 9.8.2
 executable pvp-site
   main-is:          site.hs
   hs-source-dirs:   src/
-  build-depends:    base          >= 4.17 && < 5
+  build-depends:    base          >= 4.17 && < 4.20
                   , hakyll        >= 4.16 && < 4.17
                   , pandoc        >= 3.2 && < 3.3
                   , pandoc-types  >= 1.23 && < 1.24
