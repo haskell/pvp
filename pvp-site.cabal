@@ -1,14 +1,15 @@
 cabal-version:      3.0
 name:               pvp-site
 version:            1.0
-tested-with:        GHC == 9.4.8 || == 9.6.6 || == 9.8.2 || == 9.10.1
+synopsis:           The Hakyll site for pvp.haskell.org
+tested-with:        GHC == 9.4.8 || == 9.6.6 || == 9.8.2
 
 executable pvp-site
   main-is:          site.hs
   hs-source-dirs:   src/
   build-depends:    base          >= 4.17 && < 5
                   , hakyll        >= 4.16 && < 4.17
-                  , pandoc        >= 3.2 && < 3.4
+                  , pandoc        >= 3.2 && < 3.3
                   , pandoc-types  >= 1.23 && < 1.24
                   , text          >= 2.0 && < 2.2
   ghc-options:      -threaded
