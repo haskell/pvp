@@ -1,14 +1,15 @@
-cabal-version:      2.2
+cabal-version:      3.0
 name:               pvp-site
 version:            1.0
-tested-with:        GHC == 8.0.2 || == 8.2.2 || == 8.4.4 || == 8.6.3
+tested-with:        GHC == 9.4.8 || == 9.6.6 || == 9.8.2 || == 9.10.1
 
 executable pvp-site
   main-is:          site.hs
   hs-source-dirs:   src/
-  build-depends:    base          ^>= 4.9.0.0 || ^>= 4.10.0.0 || ^>= 4.11.0.0 || ^>= 4.12.0.0
-                  , hakyll        ^>= 4.12.5.0
-                  , pandoc        ^>= 2.6
-                  , pandoc-types  ^>= 1.17.5.4
+  build-depends:    base          >= 4.17 && < 5
+                  , hakyll        >= 4.16 && < 4.17
+                  , pandoc        >= 3.2 && < 3.4
+                  , pandoc-types  >= 1.23 && < 1.24
+                  , text          >= 2.0 && < 2.2
   ghc-options:      -threaded
   default-language: Haskell2010
