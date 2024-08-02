@@ -1,5 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
+import qualified Data.Text        as Text
 import           Hakyll
 import qualified Text.Pandoc      as Pandoc
 import qualified Text.Pandoc.Walk as Pandoc
@@ -55,5 +56,5 @@ addAnchors =
     addAnchor :: Pandoc.Block -> Pandoc.Block
     addAnchor (Pandoc.Header level attr@(id_, _, _) content) =
         Pandoc.Header level attr $ content ++
-            [Pandoc.Link ("", ["anchor"], []) [Pandoc.Str "🔗"] ('#' : id_, "")]
+            [Pandoc.Link ("", ["anchor"], []) [Pandoc.Str "🔗"] (Text.cons '#' id_, "")]
     addAnchor block = block
