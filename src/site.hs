@@ -13,6 +13,10 @@ main = hakyll $ do
         route   idRoute
         compile compressCssCompiler
 
+    match "static/*" $ do
+        route idRoute
+        compile copyFileCompiler
+
     match "templates/*" $ do
         compile templateBodyCompiler
 
