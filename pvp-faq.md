@@ -12,6 +12,11 @@ If you have a question not addressed by the FAQ entries, feel free to
 post your question in the
 [PVP Issue Tracker](https://github.com/haskell/pvp/issues).
 
+The FAQ is not an authoritative source of interpretation for the PVP specification.
+Instead it is an attempt to provide insights. The source of truth is always and only
+the specification text. As this is a historical work-in-progress document, it may
+contain opinions not directly reflected in the proper specification.
+
 ## SemVer
 
 ### How does the PVP relate to [Semantic Versioning (SemVer)](http://semver.org)?
