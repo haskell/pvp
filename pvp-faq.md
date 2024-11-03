@@ -29,8 +29,12 @@ The most apparent somewhat superficial difference between SemVer and the
 PVP is which components of the version number are interpreted as
 major, minor, and patch-level numerals:
 
- - PVP: *MAJOR.MAJOR.MINOR.PATCH*
+ - PVP: *MAJOR.MAJOR.MINOR.PATCH* [^1]
  - SemVer: *MAJOR.MINOR.PATCH*
+
+[^1]: In PVP, components beyond the third are optional, to be used in any
+      way the package maintainer sees fit. In practice, four-component
+      versioning (`A.B.C.D`) is standard.
 
 While having a 2-part major component may confuse people used to
 SemVer, it provides an additional dimension for communicating API
