@@ -146,8 +146,8 @@ Now consider this scenario:
     version number bumped, as required by the PVP.
 2.  Package B, which can still work with the old and new version of
     package A, changes its dependency on package A to allow for both
-    versions. Package B only gets a patch-level bump.
-3.  Package C might or might not compile, depending on which patch-level
+    versions. Package B only gets a minor version number bump.
+3.  Package C might or might not compile, depending on which minor
     version of package B is used.
 
 The PVP could require that package B must bump its major version number
