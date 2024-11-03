@@ -153,7 +153,7 @@ Now consider this scenario:
 The PVP could require that package B must bump its major version number
 as it now (re-)exports one fewer instances. This will however require
 more frequent version bumps in the whole ecosystem. As a pragmatic
-solution, for now the PVP doesn't required a major version bump in this
+solution, for now the PVP doesn't require a major version bump in this
 case and instead leaves it to package C to add a dependency on package A
 to handle this situation.
 
